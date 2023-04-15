@@ -8,9 +8,15 @@ import { KeycloakService } from 'keycloak-angular';
 })
 export class RestrictedSpaceComponent implements OnInit{
 
+  projectmanager: boolean
+  financemanager: boolean
+  isAdmin = false
   constructor(private keycloakService: KeycloakService){
-    
+    this.projectmanager = keycloakService.getUserRoles().includes('pm');
+    this.financemanager = keycloakService.getUserRoles().includes('fm');
+    this.isAdmin = keycloakService.getUserRoles().includes('admin');
   }
+
   ngOnInit(): void {
       
   }

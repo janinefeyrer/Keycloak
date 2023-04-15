@@ -1,3 +1,173 @@
 <p>This is a User Area, which can only be seen by users</p>
 <div> Welcome {{username()}} </div>
+<br>
+<ng-container *ngIf="projectmanager">Hallo, das ist nur für den Adminbereich</ng-container>
+<ng-container *ngIf="financemanager">Hallo, das ist nur für den my demo user Bereich</ng-container>
 <button (click)="logout()">LOGOUT</button>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mitarbeiterdaten</title>
+</head>
+<body>
+	<h1>Mitarbeiterdaten</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th *ngIf="isAdmin">Adresse</th>
+			<th *ngIf="isAdmin">Herkunftsland</th>
+			<th *ngIf="isAdmin">Berufstätigkeit</th>
+			<th *ngIf="isAdmin">Ausbildung</th>
+			<th *ngIf="financemanager || isAdmin">Gehalt</th>
+			<th *ngIf="isAdmin">Geburtsdatum</th>
+			<th *ngIf="isAdmin">Dienstjahre</th>
+			<th *ngIf="projectmanager || isAdmin">Beschäftigte Projekte</th>
+		</tr>
+		<tr>
+            <td>Max Mustermann</td>
+            <td *ngIf="isAdmin">Musterstraße 1, 12345 Musterstadt</td>
+            <td *ngIf="isAdmin">Deutschland</td>
+            <td *ngIf="isAdmin">Softwareentwickler</td>
+            <td *ngIf="isAdmin">Informatikstudium</td>
+            <td *ngIf="financemanager || isAdmin">60.000 Euro</td>
+            <td *ngIf="isAdmin">01.01.1980</td>
+            <td *ngIf="isAdmin">10</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt A, Projekt B</td>
+          </tr>
+          <tr>
+            <td>Maria Müller</td>
+            <td *ngIf="isAdmin">Musterweg 2, 54321 Musterstadt</td>
+            <td *ngIf="isAdmin">Österreich</td>
+            <td *ngIf="isAdmin">Projektmanagerin</td>
+            <td *ngIf="isAdmin">Wirtschaftsstudium</td>
+            <td *ngIf="financemanager || isAdmin">80.000 Euro</td>
+            <td *ngIf="isAdmin">15.05.1975</td>
+            <td *ngIf="isAdmin">20</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt B, Projekt C</td>
+          </tr>
+          <tr>
+            <td>John Smith</td>
+            <td *ngIf="isAdmin">123 Main Street, Anytown, USA</td>
+            <td *ngIf="isAdmin">USA</td>
+            <td *ngIf="isAdmin">Marketing Manager</td>
+            <td *ngIf="isAdmin">Business Administration degree</td>
+            <td *ngIf="financemanager || isAdmin">$80,000</td>
+            <td *ngIf="isAdmin">01/01/1985</td>
+            <td *ngIf="isAdmin">8</td>
+            <td *ngIf="projectmanager || isAdmin">Project C, Project D</td>
+          </tr>
+        <tr>
+            <td>Anna Schmidt</td>
+            <td *ngIf="isAdmin">Musterweg 3, 12345 Musterstadt</td>
+            <td *ngIf="isAdmin">Deutschland</td>
+            <td *ngIf="isAdmin">Vertriebsmitarbeiterin</td>
+            <td *ngIf="isAdmin">Kaufmännische Ausbildung</td>
+            <td *ngIf="financemanager || isAdmin">45.000 Euro</td>
+            <td *ngIf="isAdmin">10.08.1987</td>
+            <td *ngIf="isAdmin">5</td>
+            <td *ngIf="projectmanager || isAdmin">Project D, Project E</td>
+		</tr>
+        <tr>
+            <td>David Lee</td>
+            <td *ngIf="isAdmin">456 Oak Street, Anytown, USA</td>
+            <td *ngIf="isAdmin">USA</td>
+            <td *ngIf="isAdmin">Softwareentwickler</td>
+            <td *ngIf="isAdmin">Informatikstudium</td>
+            <td *ngIf="financemanager || isAdmin">$75,000</td>
+            <td *ngIf="isAdmin">06/22/1990</td>
+            <td *ngIf="isAdmin">3</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt F, Projekt G</td>
+          </tr>
+          <tr>
+            <td>Ahmed Khalil</td>
+            <td *ngIf="isAdmin">15 Rue de la Liberté, 1002 Tunis, Tunesien</td>
+            <td *ngIf="isAdmin">Tunesien</td>
+            <td *ngIf="isAdmin">IT-Administrator</td>
+            <td *ngIf="isAdmin">Informatikstudium</td>
+            <td *ngIf="financemanager || isAdmin">35.000 Dinar</td>
+            <td *ngIf="isAdmin">12.02.1995</td>
+            <td *ngIf="isAdmin">2</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt H</td>
+          </tr>
+          <tr>
+			<td>Luigi Rossi</td>
+			<td *ngIf="isAdmin">Via Roma 5, 20121 Milano, Italien</td>
+			<td *ngIf="isAdmin">Italien</td>
+			<td *ngIf="isAdmin">Marketing Manager</td>
+			<td *ngIf="isAdmin">Betriebswirtschaftsstudium</td>
+			<td *ngIf="financemanager || isAdmin">70.000 Euro</td>
+			<td *ngIf="isAdmin">03/05/1982</td>
+			<td *ngIf="isAdmin">8</td>
+			<td *ngIf="projectmanager || isAdmin">Projekt I, Projekt J</td>
+		</tr>
+        <tr>
+			<td>Yusuf Khan</td>
+			<td *ngIf="isAdmin">18/20, 2nd Floor, Mahalaxmi Metro Station Building, Near K.K. Hospital, Parel, Mumbai, Indien</td>
+			<td *ngIf="isAdmin">Indien</td>
+			<td *ngIf="isAdmin">Finanzanalyst</td>
+			<td *ngIf="isAdmin">Master in Business Administration</td>
+			<td *ngIf="financemanager || isAdmin">6,00,000 INR</td>
+			<td *ngIf="isAdmin">01.07.1990</td>
+			<td *ngIf="isAdmin">4</td>
+			<td *ngIf="projectmanager || isAdmin">Projekt K, Projekt L</td>
+		</tr>
+        <tr>
+			<td>Emma Smith</td>
+			<td *ngIf="isAdmin">123 Main Street, Anytown, USA</td>
+			<td *ngIf="isAdmin">USA</td>
+			<td *ngIf="isAdmin">Projektmanagerin</td>
+			<td *ngIf="isAdmin">Bachelor in Betriebswirtschaft</td>
+			<td *ngIf="financemanager || isAdmin">$80,000</td>
+			<td *ngIf="isAdmin">01/01/1985</td>
+			<td *ngIf="isAdmin">6</td>
+			<td *ngIf="projectmanager || isAdmin">Projekt A, Projekt B</td>
+		</tr>
+		<tr>
+            <td>Carlos Garcia</td>
+            <td *ngIf="isAdmin">Calle 123, 4567 Buenos Aires, Argentinien</td>
+            <td *ngIf="isAdmin">Argentinien</td>
+            <td *ngIf="isAdmin">Technischer Zeichner</td>
+            <td *ngIf="isAdmin">Ausbildung zum technischen Zeichner</td>
+            <td *ngIf="financemanager || isAdmin">40.000 Pesos</td>
+            <td *ngIf="isAdmin">05/15/1992</td>
+            <td *ngIf="isAdmin">2</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt C</td>
+          </tr>
+          <tr>
+            <td>João da Silva</td>
+            <td *ngIf="isAdmin">Rua 123, 45678 São Paulo, Brasilien</td>
+            <td *ngIf="isAdmin">Brasilien</td>
+            <td *ngIf="isAdmin">Vertriebsleiter</td>
+            <td *ngIf="isAdmin">Bachelor in Betriebswirtschaft</td>
+            <td *ngIf="financemanager || isAdmin">150.000 Reais</td>
+            <td *ngIf="isAdmin">10/31/1980</td>
+            <td *ngIf="isAdmin">12</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt F, Projekt G, Projekt H</td>
+          </tr>
+          <tr>
+            <td>João da Silva</td>
+            <td *ngIf="isAdmin">Rua 123, 45678 São Paulo, Brasilien</td>
+            <td *ngIf="isAdmin">Brasilien</td>
+            <td *ngIf="isAdmin">Vertriebsleiter</td>
+            <td *ngIf="isAdmin">Bachelor in Betriebswirtschaft</td>
+            <td *ngIf="financemanager || isAdmin">150.000 Reais</td>
+            <td *ngIf="isAdmin">10/31/1980</td>
+            <td *ngIf="isAdmin">12</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt F, Projekt G, Projekt H</td>
+          </tr>
+
+          <tr>
+            <td>Kim Min-ji</td>
+            <td *ngIf="isAdmin">10, Yeouido-dong, Yeongdeungpo-gu, Seoul, Südkorea</td>
+            <td *ngIf="isAdmin">Südkorea</td>
+            <td *ngIf="isAdmin">Projektassistentin</td>
+            <td *ngIf="isAdmin">Bachelor in Betriebswirtschaft</td>
+            <td *ngIf="financemanager || isAdmin">35.000.000 Won</td>
+            <td *ngIf="isAdmin">02/07/1994</td>
+            <td *ngIf="isAdmin">1</td>
+            <td *ngIf="projectmanager || isAdmin">Projekt I</td>
+          </tr>
+	</table>
+</body>
+</html>
