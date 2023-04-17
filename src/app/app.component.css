@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, sans-serif;
+}
+h1 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 50px;
+    color: #333;
+  }
+
+  /* Zentriert die beiden div-Elemente horizontal */
+  div {
+    margin: 0 auto;
+    text-align: center;
+  }
+  nav {
+    text-align: center;
+  }
+
+  /* Stil für die ungeordnete Liste */
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+
+  /* Stil für die Listenelemente */
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  /* Stil für die Links */
+  a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* Hover-Effekt für Links */
+  a:hover {
+    background-color: #eee;
+  }

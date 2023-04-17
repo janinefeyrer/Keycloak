@@ -1,17 +1,25 @@
-<p>This is a User Area, which can only be seen by users</p>
-<div> Welcome {{username()}} </div>
-<br>
-<ng-container *ngIf="projectmanager">Hallo, das ist nur für den Adminbereich</ng-container>
-<ng-container *ngIf="financemanager">Hallo, das ist nur für den my demo user Bereich</ng-container>
-<button (click)="logout()">LOGOUT</button>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Mitarbeiterdaten</title>
 </head>
 <body>
-	<h1>Mitarbeiterdaten</h1>
+	<h2>Mitarbeiterdaten</h2>
+    <p>This is a User Area, which can only be seen by users</p>
+    <div> Welcome {{username()}} </div>
+    <p>User with different roles, have different rights. </p>
+    <ul>
+      <li>Financemanager (fm) can see the names and the salary of the staff</li>
+      <li>Projectmanager (pm) can see the names and the projects of the staff</li>
+      <li>Admin (admin) can see all the data (Name, Adresse, Herkunftsland, Berufstätigkeit, Ausbildung, Gehalt, Geburtsdatum, Dienstjahre and beschäftigte Projekte) of the staff</li>
+    </ul>
+    
+    <br>
+    <ng-container *ngIf="projectmanager">Your role is: pm</ng-container>
+    <ng-container *ngIf="financemanager">Your role is: fm</ng-container>
+    <ng-container *ngIf="isAdmin">Your role is: admin</ng-container>
+    <button (click)="logout()">LOGOUT</button>
+    
 	<table>
 		<tr>
 			<th>Name</th>
